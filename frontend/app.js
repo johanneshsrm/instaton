@@ -49,4 +49,9 @@ $(document).ready(function () {
 
         $(imageContainer).append(markup);
     });
+
+    $('#absenden').click(function () {
+        let username = $('#username').val();
+        let title = $('#titel').val();
+    });
 });
