@@ -21,6 +21,14 @@ p, span, label {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
+input {
+    margin-right: 15px;
+}
+
+#titel {
+    width: 33%;
+}
+
 .wrapper {
     max-width: 960px;
     margin: 0 auto;
