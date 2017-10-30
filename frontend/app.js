@@ -28,6 +28,10 @@ $(document).ready(function() {
     let imageContainer = $('#image-container');
 
     posts.forEach(function (post) {
-        console.log(post);
+        let author = post.author;
+        let imageSource = post.image;
+        let titleText = post.title;
+        let postId = post.id;
+        let likeAmount = post.liked.length;
     });
 });
