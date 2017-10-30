@@ -63,6 +63,22 @@ $(document).ready(function () {
         posts.unshift(postEntry);
     });
 
+    $('body').on('click', '.likes > img', function (e) {
+        let target = $(e.target);
+        let username = $('#username').val();
+
+        posts.forEach(function (post) {
+            if (post.id === $(target).data('id') && post.liked.includes(username) === false) {
+                let currentText = $(target).next().text();
+                $(target).next().text(`${parseInt(currentText.charAt(0)) + 1} Likes`);
+
+                $(target).css('filter', 'saturate(10)');
+
+                post.liked.push(username);
+            }
+        });
+    });
+
     function generateRandomId() {
         return Math.random().toString(36).slice(3);
     }
