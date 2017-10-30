@@ -79,4 +79,16 @@ $(document).ready(function () {
           `
         );
     }
+
+    function buildPostEntry(author, imageSource, postId, titleText) {
+        return (
+            {
+                "id": postId,
+                "image": imageSource,
+                "title": titleText,
+                "author": author,
+                "liked": []
+            }
+        );
+    }
 });
