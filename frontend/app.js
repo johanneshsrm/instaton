@@ -55,4 +55,8 @@ $(document).ready(function () {
         let title = $('#titel').val();
         let imageSource = URL.createObjectURL($('#bild')[0].files[0]);
     });
+
+    function generateRandomId() {
+        return Math.random().toString(36).slice(3);
+    }
 });
