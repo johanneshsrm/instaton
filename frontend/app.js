@@ -51,7 +51,7 @@ $(document).ready(function () {
         posts.unshift(postEntry);
     });
 
-    $('body').on('click', '.likes > img', function (e) {
+    $('body').on('click', '.likes img', function (e) {
         let target = $(e.target);
         let username = $('#username').val();
 
