@@ -26,4 +26,8 @@ $(document).ready(function() {
     const HeartIconSource = 'https://i.imgur.com/MXgr4Xl.png';
 
     let imageContainer = $('#image-container');
+
+    posts.forEach(function (post) {
+        console.log(post);
+    });
 });
