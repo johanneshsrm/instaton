@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     let posts = [
         {
             "id": "d92jfi",
@@ -33,5 +33,18 @@ $(document).ready(function() {
         let titleText = post.title;
         let postId = post.id;
         let likeAmount = post.liked.length;
+
+        let markup =
+            `
+              <li>
+                <p>${author}</p>
+                <img src="${imageSource}">
+                <div class="likes">
+                  <img src="${HeartIconSource}" data-id="${postId}">
+                  <span>${likeAmount} Likes</span>
+                </div>
+                <p>${titleText}</p>
+              </li>
+            `;
     });
 });
