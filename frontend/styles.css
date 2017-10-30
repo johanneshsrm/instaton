@@ -25,3 +25,9 @@ p, span, label {
     max-width: 960px;
     margin: 0 auto;
 }
+
+#image-container {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
