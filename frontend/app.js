@@ -21,5 +21,7 @@ $(document).ready(function() {
             "author": "loehnertz",
             "liked": ["tester1", "tester2", "etawawd"]
         },
-    ]
+    ];
+
+    const HeartIconSource = 'https://i.imgur.com/MXgr4Xl.png';
 });
