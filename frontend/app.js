@@ -55,6 +55,9 @@ $(document).ready(function () {
         let title = $('#titel').val();
         let imageSource = URL.createObjectURL($('#bild')[0].files[0]);
         let postId = generateRandomId();
+
+        let markup = buildPostMarkup(username, imageSource, postId, 0, title);
+        $('#upload').after(markup);
     });
 
     function generateRandomId() {
