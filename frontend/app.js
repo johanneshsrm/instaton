@@ -58,6 +58,9 @@ $(document).ready(function () {
 
         let markup = buildPostMarkup(username, imageSource, postId, 0, title);
         $('#upload').after(markup);
+
+        let postEntry = buildPostEntry(username, imageSource, postId, title);
+        posts.unshift(postEntry);
     });
 
     function generateRandomId() {
