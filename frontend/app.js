@@ -46,5 +46,7 @@ $(document).ready(function () {
                 <p>${titleText}</p>
               </li>
             `;
+
+        $(imageContainer).append(markup);
     });
 });
