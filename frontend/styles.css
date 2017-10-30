@@ -31,3 +31,15 @@ p, span, label {
     padding: 0;
     margin-top: 25px;
 }
+
+.likes {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.likes > img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
