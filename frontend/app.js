@@ -60,4 +60,20 @@ $(document).ready(function () {
     function generateRandomId() {
         return Math.random().toString(36).slice(3);
     }
+
+    function buildPostMarkup(author, imageSource, postId, likeAmount, titleText) {
+        return (
+            `
+          <li>
+            <p>${author}</p>
+            <img src="${imageSource}">
+            <div class="likes">
+              <img src="${HeartIconSource}" data-id="${postId}">
+              <span>${likeAmount} Likes</span>
+            </div>
+            <p>${titleText}</p>
+          </li>
+          `
+        );
+    }
 });
