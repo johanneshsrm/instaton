@@ -34,19 +34,7 @@ $(document).ready(function () {
         let postId = post.id;
         let likeAmount = post.liked.length;
 
-        let markup =
-            `
-              <li>
-                <p>${author}</p>
-                <img src="${imageSource}">
-                <div class="likes">
-                  <img src="${HeartIconSource}" data-id="${postId}">
-                  <span>${likeAmount} Likes</span>
-                </div>
-                <p>${titleText}</p>
-              </li>
-            `;
-
+        let markup = buildPostMarkup(author, imageSource, postId, likeAmount, titleText);
         $(imageContainer).append(markup);
     });
 
