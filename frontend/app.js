@@ -56,11 +56,9 @@ $(document).ready(function () {
         let username = $('#username').val();
 
         posts.forEach(function (post) {
-            if (post.id === $(target).data('id') && post.liked.includes(username) === false) {
+            if (post.id === $(target).data('id') && !post.liked.includes(username)) {
                 let currentText = $(target).next().text();
                 $(target).next().text(`${parseInt(currentText.charAt(0)) + 1} Likes`);
-
-                $(target).css('filter', 'saturate(10)');
 
                 post.liked.push(username);
             }
