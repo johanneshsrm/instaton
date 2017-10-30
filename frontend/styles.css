@@ -10,4 +10,9 @@ h1 {
     margin: 0;
     color: whitesmoke;
     text-align: center;
+    font-family: 'Pacifico', cursive;
+}
+
+p, span, label {
+    font-family: 'Open Sans Condensed', sans-serif;
 }
