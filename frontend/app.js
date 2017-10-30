@@ -54,6 +54,7 @@ $(document).ready(function () {
         let username = $('#username').val();
         let title = $('#titel').val();
         let imageSource = URL.createObjectURL($('#bild')[0].files[0]);
+        let postId = generateRandomId();
     });
 
     function generateRandomId() {
