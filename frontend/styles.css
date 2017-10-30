@@ -40,6 +40,13 @@ input {
     margin-top: 25px;
 }
 
+#image-container li {
+    background-color: whitesmoke;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin: 25px 0;
+}
+
 .likes {
     display: flex;
     align-items: center;
