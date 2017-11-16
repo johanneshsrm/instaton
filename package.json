@@ -1,0 +1,29 @@
+{
+  "name": "instaton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "ejs": "~2.5.7",
+    "multer": "^1.3.0",
+    "nodemon": "^1.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "debug": "node --inspect backend.js",
+    "start": "nodemon backend.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johannesluderschmidthsrm/instaton.git"
+  },
+  "author": "Jakob Löhnertz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johannesluderschmidthsrm/instaton/issues"
+  },
+  "homepage": "https://github.com/johannesluderschmidthsrm/instaton#readme"
+}
