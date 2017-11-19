@@ -42,4 +42,6 @@ app.get('/', function(req, res) {
 * FUNKTIONEN
 * */
 
-
+function loadPosts() {
+    return JSON.parse(Fs.readFileSync('./posts.json'));
+}
