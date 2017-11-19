@@ -23,6 +23,37 @@
             <input name="bild" type="file" id="bild">
             <button id="absenden">Absenden</button>
         </li>
+        <%
+        const HeartIconSource = 'https://i.imgur.com/MXgr4Xl.png';
+
+        function buildPostMarkup(author, imageSource, postId, likeAmount, titleText) {
+            return (
+                    `
+          <li>
+            <p>${author}</p>
+            <img src="${imageSource}">
+            <div class="likes">
+              <img src="${HeartIconSource}" data-id="${postId}">
+              <span>${likeAmount} Likes</span>
+            </div>
+            <p>${titleText}</p>
+          </li>
+          `
+            );
+        }
+
+        posts.forEach(function (post) {
+            let author = post.author;
+            let imageSource = post.image;
+            let titleText = post.title;
+            let postId = post.id;
+            let likeAmount = post.liked.length;
+
+        %>
+        <%- buildPostMarkup(author, imageSource, postId, likeAmount, titleText) %>
+        <%
+        });
+        %>
     </ul>
 </main>
 </body>
