@@ -35,8 +35,9 @@ app.listen(Port, function () {
 * */
 
 app.get('/', function(req, res) {
-    res.render('index.ejs');
+    res.render('index.ejs', {posts: loadPosts()});
 });
+
 
 /*
 * FUNKTIONEN
