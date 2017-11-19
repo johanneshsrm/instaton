@@ -23,3 +23,21 @@ app.use(function (req, res, next) {
 app.listen(Port, function () {
     console.log('Instaton-Server running...');
 });
+
+/*
+* Oberhalb hiervon bitte nichts editieren oder einfügen.
+* Unter diesen Kommentar kommt Ihr Code :)
+* */
+
+
+/*
+* ROUTEN
+* */
+
+
+
+/*
+* FUNKTIONEN
+* */
+
+
