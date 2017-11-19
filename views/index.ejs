@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Instaton</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--<script src="./app.js"></script>-->
+</head>
+<body>
+<main>
+    <header>
+        <h1>Instaton</h1>
+    </header>
+    <ul id="image-container" class="wrapper">
+        <li id="upload">
+            <label for="username">Username</label>
+            <input name="username" type="text" id="username">
+            <label for="titel">Titel</label>
+            <input name="titel" type="text" id="titel">
+            <label for="bild">Bild</label>
+            <input name="bild" type="file" id="bild">
+            <button id="absenden">Absenden</button>
+        </li>
+        <%
+        const HeartIconSource = 'https://i.imgur.com/MXgr4Xl.png';
+
+        function buildPostMarkup(author, imageSource, postId, likeAmount, titleText) {
+            return (
+                    `
+          <li>
+            <p>${author}</p>
+            <img src="${imageSource}">
+            <div class="likes">
+              <img src="${HeartIconSource}" data-id="${postId}">
+              <span>${likeAmount} Likes</span>
+            </div>
+            <p>${titleText}</p>
+          </li>
+          `
+            );
+        }
+
+        posts.forEach(function (post) {
+            let author = post.author;
+            let imageSource = post.image;
+            let titleText = post.title;
+            let postId = post.id;
+            let likeAmount = post.liked.length;
+
+        %>
+        <%- buildPostMarkup(author, imageSource, postId, likeAmount, titleText) %>
+        <%
+        });
+        %>
+    </ul>
+</main>
+</body>
+</html>
