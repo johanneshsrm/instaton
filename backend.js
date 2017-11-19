@@ -34,7 +34,9 @@ app.listen(Port, function () {
 * ROUTEN
 * */
 
-
+app.get('/', function(req, res) {
+    res.render('index.ejs');
+});
 
 /*
 * FUNKTIONEN
