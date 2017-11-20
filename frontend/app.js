@@ -2,21 +2,21 @@ $(document).ready(function () {
     let posts = [
         {
             "id": "d92jfi",
-            "image": "http://localhost:3000/uploads/c568ab0c7e90c3fc122936fef0d4d489",
+            "image": "https://lh3.googleusercontent.com/p/AF1QipMbAwY9MBHgd_zAzO97Dd4R0fYrVicNIpaswOow=s1600-w1200",
             "title": "Das Schloss zu Biebrich",
             "author": "loehnertz",
             "liked": ["tester1", "tester2", "etawawd"]
         },
         {
             "id": "2ecji9",
-            "image": "https://lh3.googleusercontent.com/p/AF1QipMbAwY9MBHgd_zAzO97Dd4R0fYrVicNIpaswOow=s1600-w1200",
+            "image": "http://www.gerdkaefer-rolandkuffler.de/global/bilder/slideshows/kurhaus/6-kurhaus-wiesbaden-Friedrich-v-Thiersch-Saal.jpg?m=1431613581",
             "title": "Das Kurhaus",
             "author": "loehnertz",
             "liked": ["tester1", "tester2"]
         },
         {
             "id": "28wda7z",
-            "image": "https://lh3.googleusercontent.com/p/AF1QipMbAwY9MBHgd_zAzO97Dd4R0fYrVicNIpaswOow=s1600-w1200",
+            "image": "https://www.sonntagsziele.de/wp-content/uploads/2016/11/2012.09.24.120222_Monopteros_Neroberg_Wiesbaden.jpg",
             "title": "Der Neroberg",
             "author": "loehnertz",
             "liked": ["tester1", "tester2", "etawawd"]
