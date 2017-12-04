@@ -54,6 +54,23 @@ app.get('/', function(req, res) {
     });
 });
 
+app.post('/upload', upload.any(), function(req, res) {
+    let imageInfo = req.files[0];
+    let postInfo = req.body;
+
+    console.log(imageInfo, postInfo);
+
+    Posts.create({
+        id: imageInfo["filename"],
+        author: postInfo["author"],
+        title: postInfo["title"],
+        liked: [],
+        image: `http://localhost:${Port}/uploads/${imageInfo.filename}`,
+    }).then(function (post) {
+        res.json(post);
+    });
+});
+
 
 /*
 * FUNKTIONEN
