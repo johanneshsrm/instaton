@@ -49,14 +49,12 @@ const Posts = Mongoose.model(
 * */
 
 app.get('/', function(req, res) {
-    res.render('index.ejs', {posts: loadPosts()});
+    Posts.find().then(function (posts) {
+        res.render('index.ejs', {posts: posts});
+    });
 });
 
 
 /*
 * FUNKTIONEN
 * */
-
-function loadPosts() {
-    return JSON.parse(Fs.readFileSync('./posts.json'));
-}
