@@ -4,6 +4,7 @@ const Fs = require("fs");
 const Path = require("path");
 const Express = require("express");
 const Multer = require("multer");
+const Mongoose = require("mongoose");
 
 let app = Express();
 let upload = Multer({"dest": "./uploads/"});
@@ -28,6 +29,19 @@ app.listen(Port, function () {
 * Oberhalb hiervon bitte nichts editieren oder einfügen.
 * Unter diesen Kommentar kommt Ihr Code :)
 * */
+
+Mongoose.connect('mongodb://138.68.107.150/instaton');
+
+const Posts = Mongoose.model(
+    'posts',
+    new Mongoose.Schema({
+        id: String,
+        image: String,
+        title: String,
+        author: String,
+        liked: Array
+    })
+);
 
 
 /*
