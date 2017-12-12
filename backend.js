@@ -49,8 +49,12 @@ const Posts = Mongoose.model(
 * */
 
 app.get('/', function(req, res) {
+    res.render('index.ejs', {posts: []});
+});
+
+app.get('/posts', function(req, res) {
     Posts.find().then(function (posts) {
-        res.render('index.ejs', {posts: posts});
+        res.json(posts);
     });
 });
 
@@ -58,15 +62,14 @@ app.post('/upload', upload.any(), function(req, res) {
     let imageInfo = req.files[0];
     let postInfo = req.body;
 
-    console.log(imageInfo, postInfo);
-
     Posts.create({
         id: imageInfo["filename"],
         author: postInfo["author"],
         title: postInfo["title"],
         liked: [],
-        image: `http://localhost:${Port}/uploads/${imageInfo.filename}`,
+        image: calculateBase64(imageInfo),
     }).then(function (post) {
+        Fs.unlinkSync(Path.resolve(imageInfo["path"]));
         res.json(post);
     });
 });
@@ -78,13 +81,15 @@ app.patch('/like', function(req, res) {
     Posts.findOne({
         id: postId
     }).then(function (post) {
-        if (!post.liked.includes(username)) {
-            post.liked.push(username);
+        if (!post["liked"].includes(username)) {
+            post["liked"].push(username);
             post.save();
             res.json({"liked": true});
         } else {
-            res.json({"liked": false});
+            res.json({"liked": true});
         }
+    }).catch(function () {
+        res.json({"liked": false});
     });
 });
 
@@ -92,3 +97,8 @@ app.patch('/like', function(req, res) {
 /*
 * FUNKTIONEN
 * */
+
+function calculateBase64(imageInfo) {
+    let imageAsBase64 = Fs.readFileSync(Path.resolve(imageInfo["path"]), {encoding: "base64"});
+    return `data:${imageInfo["mimetype"]};base64,${imageAsBase64}`;
+}
