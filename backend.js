@@ -71,23 +71,6 @@ app.post('/upload', upload.any(), function(req, res) {
     });
 });
 
-app.patch('/like', function(req, res) {
-    let username = req.body["username"];
-    let postId = req.body["id"];
-
-    Posts.findOne({
-        id: postId
-    }).then(function (post) {
-        if (!post.liked.includes(username)) {
-            post.liked.push(username);
-            post.save();
-            res.json({"liked": true});
-        } else {
-            res.json({"liked": false});
-        }
-    });
-});
-
 
 /*
 * FUNKTIONEN
