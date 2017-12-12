@@ -58,8 +58,6 @@ app.post('/upload', upload.any(), function(req, res) {
     let imageInfo = req.files[0];
     let postInfo = req.body;
 
-    console.log(imageInfo, postInfo);
-
     Posts.create({
         id: imageInfo["filename"],
         author: postInfo["author"],
