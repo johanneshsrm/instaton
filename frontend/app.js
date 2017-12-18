@@ -1,3 +1,6 @@
+// Tragen Sie hier ihren Stud.IP Namen ein!
+const YourName = '';
+
 // JQuery soll warten, bis die HTML-Seite vollständig geladen wurde, um Fehler zu vermeiden.
 $(document).ready(function () {
     // Das Herz-Icon als Bilddatei
@@ -9,7 +12,7 @@ $(document).ready(function () {
     Funktion `renderPosts()` auf und übergeben die `posts.
     **/
     let posts;
-    $.getJSON("http://localhost:3001/posts", function (data) {
+    $.getJSON(`https://${YourName}.now.sh/posts`, function (data) {
         posts = data;
         renderPosts(posts);
     });
@@ -34,7 +37,7 @@ $(document).ready(function () {
             data.append('image', bild);
 
             $.ajax({
-                url : 'http://localhost:3001/upload',
+                url : `https://${YourName}.now.sh/upload`,
                 type: 'POST',
                 contentType: false,
                 processData: false,
@@ -42,6 +45,8 @@ $(document).ready(function () {
             }).done(function (res) {
                 location.reload();
             });
+
+            $("#absenden").attr('disabled', true);
         }
     });
 
@@ -60,7 +65,7 @@ $(document).ready(function () {
         posts.forEach(function (post) {
             if (post["id"] === postId && !post["liked"].includes(username)) {
                 $.ajax({
-                    url : 'http://localhost:3001/like',
+                    url : `https://${YourName}.now.sh/like`,
                     type: 'PATCH',
                     contentType: 'application/x-www-form-urlencoded',
                     data: {
@@ -69,12 +74,13 @@ $(document).ready(function () {
                     },
                 }).done(function (res) {
                     if (res["liked"] === true) {
-                        post["liked"].push(username);
                         let currentText = $(target).next().text();
                         $(target).next().text(`${parseInt(currentText.charAt(0)) + 1} Likes`);
                         $(target).css('filter', 'grayscale(0)');
                     }
                 });
+
+                post["liked"].push(username);
             }
         });
     });
