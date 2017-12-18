@@ -5,9 +5,10 @@ const Path = require("path");
 const Express = require("express");
 const Multer = require("multer");
 const Mongoose = require("mongoose");
+const Os = require("os");
 
 let app = Express();
-let upload = Multer({"dest": "./uploads/"});
+let upload = Multer({"dest": Os.tmpdir()});
 
 app.set('views', Path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
